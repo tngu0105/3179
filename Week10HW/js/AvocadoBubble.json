@@ -1,0 +1,126 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "title": "Sales of Organic Avocado in Albany by Bag Size per Year",
+  "data": {
+    "url": "https://raw.githubusercontent.com/tngu0105/3179/main/avocadoREAL2.csv"
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "2015",
+          "2016",
+          "2017",
+          "2018"
+        ],
+        "labels": [
+          "Show All",
+          "2015",
+          "2016",
+          "2017",
+          "2018"
+        ],
+        "name": "Year Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": {"field": "region", "equal": "Albany"}},
+    {"filter": {"field": "type", "equal": "organic"}},
+    
+    {
+      "filter": "Year_selection == null || datum.year == Year_selection"
+    }
+    
+  ],
+  "encoding": {
+    "x": {
+        "field": "Small Bags",
+        "type": "quantitative",
+        "axis": {"tickCount": 7},
+        "scale": {"domain": [0,5400]}
+    },
+    "y": {
+        "field": "Large Bags",
+        "type": "quantitative",
+        "axis": {"tickCount": 6},
+        "scale": {"domain": [0, 18]}
+    }
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "encoding": {
+        "size": {
+          "field": "Total Volume",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [770, 1000, 3000, 4000, 5600],
+            "range": [10, 50, 150, 200, 300, 400]
+          },
+          "legend": {"format": ".1s"}
+        },
+        "color": {
+          "field": "year",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+            "2015",
+            "2016",
+            "2017",
+            "2018"
+            ],
+            "range": [
+              "#e41a1c",
+              "#984ea3",
+              "#ff7f00",
+              "#a6cee3"
+            ]
+          }
+        },
+        "opacity": {"value": 0.6},
+        "tooltip": [
+          {"field": "Date", "type": "ordinal"},
+        {"field": "Small Bags", "type": "quantitative", "format": ","},
+        {"field": "Large Bags", "type": "quantitative", "format": ","},
+        {"field": "AveragePrice", "type": "quantitative", "format": ","},
+        {"field": "Total Volume", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "Date", "type": "ordinal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['Date'] == '6/12/2015' || datum['Date'] == '22/10/2017' || datum['Date'] == '28/02/2016'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Date", "type": "ordinal"},
+        {"field": "Small Bags", "type": "quantitative", "format": ","},
+        {"field": "Large Bags", "type": "quantitative", "format": ","},
+        {"field": "AveragePrice", "type": "quantitative", "format": ","},
+        {"field": "Total Volume", "type": "quantitative", "format": ","}
+        ]
+      }
+    }
+  ]
+}
