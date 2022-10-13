@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Avocado Multiple Visualisations</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+
+</head>
+
+<body>
+
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Avocado's: An American Article</h1>
+        <p>With the surge of interest in the green fruit thanks to Millennials and their trendy obsessions, 
+          the USA has demonstrated to be one of the countries that best showcases this phenomenon. And these
+          visualisations will help to make their case. 
+        </p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-2">
+        <div id="vis1" class="vis-container"></div>
+        <p>The popularity of Avocado's in America is indisputed. The United States is the second largest producer 
+          of avocados after Mexico</p>
+        <br><br>
+
+        <div id="vis2" class="vis-container"></div>
+        <p>The best months to plant your avocado trees are from March through June. However, avocados only 
+          thrive in a handful of states. </p>
+        <br><br>
+
+        <div id="vis3" class="vis-container"></div>
+        <p>The name alligator pear originated from a specimen that has a rough skin similar to the hide of 
+        Everglades beast of the swamps.</p>
+        <br><br>
+
+        <div id="vis4" class="vis-container"></div>
+        <p>California produces 90% of the U.S. avocado crop. The avocado star of California is San Diego County, 
+          which produces 40% of all California-grown avocados. </p>
+        <br><br>
+
+        <div id="vis5" class="vis-container"></div>
+        <p>It is possible for an avocado tree to produce 200 to 300 fruit per tree once it is about 5-7 years of age. 
+          The avocado tree, however, alternates bearing. This means that the tree may produce a large crop one year, 
+          and then produce a small crop the following year.</p>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+   
+
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./USA8.json";
+    var specVis2 = "./AvocadoBubble.json";
+    var specVis3 = "./Vis3.json";
+    var specVis4 = "./Vis4.json";
+    var specVis5 = "./Vis5.json";
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+</body>
+
+</html>

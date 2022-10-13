@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Analysing Avocado Receipt Sales",
+  "data": {
+    "url": "https://raw.githubusercontent.com/tngu0105/3179/main/avocadoREAL4.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {
+      "field": "region",
+      "type": "nominal",
+      "title": "Month of the year"
+    },
+    "y": {
+      "field": "Amount Sold",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "Avocado Receipt",
+      "type": "nominal",
+      "scale": {
+        "domain": ["PLU 4046", "PLU 4225", "PLU 4770"],
+        "range": ["#e7ba52", "#c7c7c7", "#aec7e8"]
+      },
+      "title": "Weather type"
+    }
+  }
+}
