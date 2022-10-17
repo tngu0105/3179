@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Dark_green.svg/2048px-Dark_green.svg.png');
+    }
+  </style>
+
+
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+
+<body>
+  <div class="w3-panel w3-topbar w3-bottombar w3-leftbar w3-rightbar w3-white w3-margin w3-border-light-green w3-round-xlarge">
+    <header class="w3-container w3-center">
+      <h1>Avocado's: An American Article</h1>
+      <p>With the surge of interest in the green fruit thanks to Millennials and their trendy obsessions, 
+        the USA has demonstrated to be one of the countries that best showcases this phenomenon. And these
+        visualisations will help to make their case. </p>
+    </header>
+
+    <br>
+
+    <div class="w3-card-4">
+      <footer class="w3-container w3-brown">
+        <h4>Avocado's & America</h4>
+      </footer>
+      
+      <div class="w3-container">
+        
+          <div id="vis1" class="vis-container"></div>
+          
+          
+            <p>The popularity of Avocado's in America is indisputed, as you can see from the map, with many regions 
+              boasting accumulated sales of 100 million and above. But this should come as no surprise as afterall, 
+              the United States is the second largest producer of avocados after Mexico. </p>
+              <p>Now if you look at the many
+              regions that sell avocado's, California is the states supreme seller, hitting a tier of sales above eight
+              figures. Goddamn. Well, other than California, which other places are doing well? Which regions are 
+            making up America's 'top 10' of avocado salers?</p>
+      </div>
+      
+      <footer class="w3-container w3-brown">
+      </footer>
+    </div>
+    
+    <br>
+
+    <div class="w3-card-4">
+      <footer class="w3-container w3-brown">
+        <h4>Apex Audiences & Avocado Alembic's</h4>
+      </footer>
+      
+      <div class="w3-container">
+        <div id="vis2" class="vis-container"></div>
+          
+          
+            <p> If you looked at the numbers correctly enough from the previous visualisation, you'd be able to see 
+              that Great Lakes, Los Angeles, Plains, New York, Denver, Houston, Dallas, Phoenix, San Francisco & 
+              California (obviously) are our top 10. Yes they boast great sales, but how do they prefer to sell it? With small bags?
+              large bags? or the good ol' extra large? </p>
+              <p>Generally, America is truly the nation of being large about everything, be it with their food, their 
+                bodies, or their spirit (for better or worse). This notion bleeds into here too, with Americans 
+              generally preferring to purchase avocado's in larger bags then smaller. Furthermore, the purchasing 
+            of extra large bags of avocado's is quite prevalent too. </p>
+          <p> So, bags are one matter, but so is the avocado type. What do they prefer? </p>
+
+      </div>
+      
+      <footer class="w3-container w3-brown">
+      </footer>
+    </div>
+
+    <br>
+
+    <div class="w3-card-4">
+      <footer class="w3-container w3-brown">
+        <h4>Attributes & Attitudes</h4>
+      </footer>
+      
+      <div class="w3-container">
+        <div id="vis3" class="vis-container"></div>
+          <p> What's the difference between conventional and organic anyway? Were avocado's truly that binary
+              in nature? Well no, this actually refers to the farming method implemented to grow these fruits. 
+            Conventional farming uses chemical fertilizers to promote plant growth, while organic farming employs 
+            the traditional manure and compost to fertilize the soil. Sure conventional is faster, but organic is 
+          said to be healthier, with these avocado's containing more healtheir nutrients. </p>
+        <p> But in spite of these healthier benefits, at no point in America's years from 2015 to 2018 do organic 
+          avocado's outdo conventional avocado's in sales. In fact the sales of organic avocado's were near 
+          non-existent come the start of 2018.  </p>
+        <p> Now when the avocado is sold, it's stuck with a particular kind of receipt. What's the most prevalent? </p>
+      </div>
+      
+      <footer class="w3-container w3-brown">
+      </footer>
+    </div>
+
+    <br>
+
+    <div class="w3-card-4">
+      <footer class="w3-container w3-brown">
+        <h4>An Avocado Array</h4>
+      </footer>
+      
+      <div class="w3-container">
+        <div id="vis4" class="vis-container"></div>
+            <p> So when avocado's are sold, it is attached with one of the three receipts: PLU 4046, 
+              PLU 4225 and/or PLU 4770. The product/price lookup (shortened to PLU) code serves to uniquely 
+              identify a produce. And for avocado's, there are three in particular. 4046 identifies 
+              non-organic small/medium Avocados, 4225 identifies non-organic large Avocados, and  
+              4770 identifies non-organic extra large Avocados.    
+            </p>
+            <p> Looking at the chart,, it's a bit of an even split between PLU 4046 and 
+              PLU 4225. Some regions showcase more purchasing of 4046, and others 4225. It is not clear that 
+            either is dominant. At the very least, we definitely know that no common American purchases extra large
+             avocado's on the daily. Wait, affordability. Yes, that is where we'll stop at next. </p>
+      </div>
+      
+      <footer class="w3-container w3-brown">
+      </footer>
+    </div>
+
+    <br>
+
+    <div class="w3-card-4">
+      <footer class="w3-container w3-brown">
+        <h4>Avocado Affordability</h4>
+      </footer>
+      
+      <div class="w3-container">
+       <div id="vis5" class="vis-container"></div>
+            <p>Well for the average USD, over the past four years the average price of the avocado has never
+              exceeded $1.50. THe trend has been consistent with a bit of an increase and decrease over the ages, 
+            but from 2017 onwards the price appears to have dropped a bit lower than usual.  </p>
+      </div>
+      
+      <footer class="w3-container w3-brown">
+      </footer>
+    </div>
+    
+  </div>
+  
+
+
+  <script type="text/javascript">
+    var specVis1 = "./Vis1.json";
+    var specVis2 = "./Vis2.json";
+    var specVis3 = "./Vis3.json";
+    var specVis4 = "./Vis4.json";
+    var specVis5 = "./Vis5.json";
+  
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+  
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
+
+</body>
+
+
+
+
+</html>
