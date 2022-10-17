@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 600,
+  "title": "Average Prices of Avocado Sold in the US",
+  "data": {
+    "url": "https://raw.githubusercontent.com/tngu0105/3179/main/avocadoREAL.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Date",
+      "timeUnit": "yearmonth"
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "errorband", "extent": "ci"},
+      "encoding": {
+        "y": {
+          "field": "AveragePrice",
+          "type": "quantitative",
+          "title": "Average Price (USD)",
+          "scale": {"domain": [0.9,1.7]}
+        }
+      }
+    },
+    {
+      "mark": "line",
+      "encoding": {
+        "y": {
+          "aggregate": "mean",
+          "field": "AveragePrice"
+        }
+      }
+    }
+  ]
+
+}
