@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Comparison & Trend of Avocado Type Sales Overtime",
+  "data": {
+    "url": "https://raw.githubusercontent.com/tngu0105/3179/main/avocadoREAL4.csv"
+  },
+  "vconcat": [ 
+    {  "width": 200,
+      "mark": "line",
+      "title": "Use this line chart to filter out the data based on time",
+      "params": [
+        {
+          "name": "time_brush",
+          "select": {"type": "interval", "encodings": ["x"]}
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "timeUnit": "yearmonth",
+          "axis": {"title": "", "format": "%Y"}
+        },
+        "y": {
+          "aggregate": "count",
+          "scale":{"domain":[1,1100]},
+          "axis": {"tickCount": 3, "grid": false},
+          "title": "Count"
+        }
+      }
+    },
+    {
+      "width": 400,
+      "transform": [
+        {
+          "bin": {"step": 0.5, "extent": [5, 7]},
+          "field": "type",
+          "as": "magnitude"
+        }
+      ],
+      "mark": "area",
+      "encoding": {
+        "x": {
+          "field": "Date",
+          "timeUnit": "yearmonth",
+          "scale": {"domain": {"param": "time_brush"}},
+          "axis": {"title": "", "tickCount": 5, "grid": false}
+        },
+        "y": {"aggregate": "count", 
+        "scale":{"domain":[1,1100]},
+        "title": "Count of Avocado"},
+        "color": {
+          "field": "type",
+          "scale": {
+            "range": ["#7CFC00", "#023020"]
+          },
+          "legend": {"values": ["organic", "conventional"]}
+        },
+        "tooltip": [
+          {"field": "type", "type": "nominal"},
+          {"aggregate": "count", "type": "quantitative", "format": ","}
+          ]
+      }
+    }
+  ],
+  "config": {
+    "title": {"font": "sans-serif", "fontSize": 14},
+    "axisY": {"minExtent": 40}
+  }
+}
